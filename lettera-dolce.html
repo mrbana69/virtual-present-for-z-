@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auguri Zuccherino!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Arial:wght@400&display=swap');
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(to bottom right, #f8c6c4, #fbd5d4); /* Soft pink gradient */
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh; /* Full viewport height */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .header {
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-family: 'Pacifico', cursive;
+            color: #d05a6f;
+        }
+
+        .notepad {
+            position: relative;
+            width: 90%; /* Increased width for better layout */
+            max-width: 800px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
+            overflow-y: auto; /* Enable vertical scrolling if needed */
+        }
+
+        .notepad.show {
+            opacity: 1;
+        }
+
+        .notepad-content {
+            font-family: 'Arial', sans-serif; /* Changed to a more readable font */
+            font-size: 18px; /* Increased font size */
+            line-height: 1.8; /* Increased line height for readability */
+            color: #333; /* Darker text color */
+            padding: 10px; /* Added padding for better readability */
+        }
+
+        .notepad-content hr {
+            border: none;
+            border-top: 1px dashed #ddd;
+            margin: 20px 0;
+        }
+
+        .notepad-content p {
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            font-style: italic;
+            color: #555; /* Slightly darker signature color */
+            margin-top: 20px;
+            font-size: 16px; /* Increased font size for signature */
+        }
+
+        .button {
+            display: inline-block;
+            margin: 20px auto;
+            background-color: #d05a6f; /* Soft pink */
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.5rem; /* Increased font size */
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .button:hover {
+            background-color: #b94452;
+        }
+
+        .animated-heart-line {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 60px; /* Increased height */
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .animated-heart-line div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px; /* Increased font size */
+            color: #d05a6f;
+            white-space: nowrap;
+            animation: scroll 10s linear infinite;
+        }
+
+        .animated-heart-line div span {
+            margin: 0 15px; /* Increased margin for better spacing */
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Buon Compleanno Amore💕 +17🥳</h1>
+        </div>
+
+        <audio class="audio-loop" id="audioElement" autoplay>
+            <source src="audio-finale.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+
+        <div class="notepad">
+            <div class="notepad-content">
+                <strong>
+                    <p>
+                      Per il resto del mondo, oggi potrebbe sembrare un giorno come tanti altri, ma per me è un giorno straordinario. Oggi celebriamo la nascita di una persona incantevole e speciale: te, Zhara.<br><hr>
+                      
+                      Quando ti ho incontrata, non avrei mai potuto immaginare quanto saresti diventata essenziale nella mia vita. Con il tempo, ho compreso che il mio amore per te è profondo e autentico. Sei diventata una parte fondamentale della mia esistenza, e ogni giorno ti sono immensamente grato per questo.<br><hr>
+                      Non avrei mai pensato di trovare qualcuno con una dolcezza e una bellezza così rare, qualcuno capace di riempire il mio cuore con tanto amore. Sei unica e insostituibile per me, e non esiste nessuna persona al mondo che possa occupare il tuo posto nel mio cuore.<br><hr>
+                      Buon compleanno, amore mio prezioso! Spero che questo giorno sia tanto magnifico quanto te e che possa essere trascorso nel modo più felice possibile.<br><hr>
+                      Ti amo con una forza che le parole non possono descrivere. Sei l’unica capace di catturare il mio cuore semplicemente essendo te stessa.<br><hr>
+                    </p>
+                </strong>
+                <p class="signature">Scritto col ❤️ da: <br> - Emiliano</p>
+            </div>
+        </div>
+
+        <button class="button" id="continue-button">CONTINUA</button>
+    </div>
+
+    <div class="animated-heart-line">
+        <div>
+            <span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span>
+            <span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span>
+        </div>
+    </div>
+
+    <script>
+        const notepad = document.querySelector('.notepad');
+        const message = document.querySelector('.notepad-content');
+        const continueButton = document.querySelector('#continue-button');
+        const audioElement = document.getElementById('audioElement');
+
+        // Hide the notepad initially
+        notepad.style.opacity = '0';
+        notepad.style.height = '0';
+
+        // Show the notepad and message after 2 seconds
+        setTimeout(() => {
+            notepad.style.opacity = '1';
+            notepad.style.height = 'auto'; // Adjust height based on content
+            audioElement.play(); // Play the audio
+        }, 2000);
+
+        // Add touchstart event listener to the body
+        document.body.addEventListener('touchstart', () => {
+            audioElement.play(); // Play the audio
+        });
+
+        // Add event listener to the continue button
+        continueButton.addEventListener('click', () => {
+            alert('Grazie per aver letto il mio messaggio amore, spero ti sia piaciuto. Comunque non ho ancora finito, giusto un\'ultima cosetta per te.');
+            window.location.href = 'certificato.html'; // Redirect to another page
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+        
+        body {
+            font-family: 'Playfair Display', Arial, sans-serif;
+            background: linear-gradient(to bottom right, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            padding: 50px;
+            text-align: center;
+            color: #333;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            font-family: 'Great Vibes', cursive;
+            font-size: 24px;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-style: italic;
+            margin: 20px 10px;
+            cursor: pointer;
+            border-radius: 25px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        button.yes {
+            background-color: #ff9a9e; /* Soft pink */
+            color: #fff;
+        }
+        
+        button.yes:hover {
+            background-color: #ff6f91;
+            transform: scale(1.1);
+        }
+        
+        button.no {
+            background-color: #a18cd1; /* Soft purple */
+            color: #fff;
+        }
+        
+        button.no:hover {
+            background-color: #8675a9;
+            transform: scale(1.1);
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .sparkle span {
+            position: absolute;
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: white;
+            box-shadow: 0 0 10px white;
+            opacity: 0;
+            animation: sparkle 1.5s infinite linear;
+        }
+
+        @keyframes sparkle {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(0);
+                opacity: 0;
+            }
+        }
+
+        .heart-line {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .heart-line div {
+            display: inline-block;
+            font-size: 24px;
+            color: #ff6f91;
+            animation: scroll 10s linear infinite;
+        }
+
+        .heart-line div span {
+            margin-right: 10px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+    <title>Una Dolce Sorpresa!</title>
+    <script>
+            function handleClick(answer) {
+                if (answer === 'yes') {
+                    alert("Grande ❤️");
+                    window.location.href = 'lettera-dolce.html';
+                } else {
+                    alert("Ah va bene... 😔💔");
+                    window.location.href = 'https://www.youtube.com/watch?v=b3rNUhDqciM&pp=ygUQdmlvbGluIG1lbWUgc29uZw%3D%3D';
+                }
+            }
+        // Create sparkle effect
+        document.addEventListener('DOMContentLoaded', function () {
+            const sparkleContainer = document.querySelector('.sparkle');
+            for (let i = 0; i < 50; i++) {
+                const span = document.createElement('span');
+                span.style.left = `${Math.random() * 100}vw`;
+                span.style.animationDelay = `${Math.random() * 2}s`;
+                sparkleContainer.appendChild(span);
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>Sei pronta per una sorpresa speciale? 🎉</h1>
+    <button class="yes" onclick="handleClick('yes')">Ovviamente ❤️</button>
+    <button class="no" onclick="handleClick('no')">Non voglio</button>
+    <audio class="audio-loop" loop id="audioElement" autoplay>
+        <source src="auguri.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="sparkle"></div>
+    <div class="heart-line">
+        <div>
+            <span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span>
+        </div>
+    </div>
+    <script>
+        // Wait for 3 seconds before playing the audio
+        setTimeout(() => {
+            const audioElement = document.getElementById('audioElement');
+            audioElement.play();
+        }, 3000);
+    </script>
+</body>
+</html>

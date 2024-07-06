@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+      @keyframes heart-beat {
+        0% {
+          transform: scale(0.5);
+        }
+        100% {
+          transform: scale(1.2);
+        }
+      }
+      
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      
+      @keyframes fall {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(100vh);
+        }
+      }
+      
+      body {
+        background: linear-gradient(to right, #ffe6f9, #ffc5c5);
+        font-family: 'Great Vibes', cursive;
+      }
+      
+     .button {
+        background-color: #fff;
+        color: #333;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        animation: pulse 2s infinite;
+      }
+      
+     .button:hover {
+        background-color: #f2f2f2;
+      }
+      
+      .heart {
+        position: absolute;
+        top: 0; /* Initial top position */
+        left: 0;
+        animation: fall 3s forwards;
+        width: 20px;
+        height: 20px;
+        background-image: url('cuoricino-per-il-mio-cuoricino.png');
+        background-size: cover;
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function() {
+        setTimeout(function() {
+            document.getElementById("button-container").style.display = "block";
+            generateHearts();
+        }, 3000); // 3000 milliseconds = 3 seconds
+    }
+    
+    function generateHearts() {
+        for (let i = 0; i < 500; i++) { // Generate 500 hearts!
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.top = `${Math.random() * 100}vh`;
+            heart.style.left = `${Math.random() * 100}vw`;
+            heart.addEventListener("animationend", function() {
+                heart.remove();
+            });
+            document.body.appendChild(heart);
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1 style="text-align:center;">Caricamento in corso...</h1>
+    <div id="button-container" style="display: none; text-align: center; margin-top: 20px;">
+        <button class="button" onclick="window.location.href = 'pagina-principale.html'">CONTINUA</button>
+    </div>
+</body>
+</html>

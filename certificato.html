@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amo Solo Te!!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to right, #fbd5d4, #f8c6c4); /* Soft pink gradient */
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1, p {
+            margin: 0;
+        }
+
+        .certificate {
+            animation: fade-in 1s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 30px;
+            border: 2px solid #f8c6c4;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 700px;
+            margin: 40px auto;
+            background-image: url('certificate-bg.png'); /* Optional background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .certificate h1 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #d05a6f;
+            margin-bottom: 10px;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .certificate p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 20px;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .award-name {
+            font-size: 36px;
+            font-weight: bold;
+            color: #d05a6f;
+            margin: 10px 0;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .audio-loop {
+            display: block;
+            margin: 20px auto;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="font-family: 'Pacifico', cursive; color: #d05a6f;">Scusami cara, ti è caduto questo!</h1>
+        <div class="certificate" id="certificate">
+            <div class="text-container">
+                <h1>Certificato di Gnocchezza</h1>
+                <p>Questo certificato attesta che</p>
+                <h1 class="award-name">Zhara</h1>
+                <p>è stata nominata con il titolo</p>
+                <h1>A Femmn più gnocc d sempr ❤️❤️</h1>
+                <p style="font-style: italic;">- Emiliano B.</p>
+            </div>
+        </div>
+        <audio class="audio-loop" loop id="audioElement" autoplay>
+            <source src="rizz-song.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <script>
+        // Wait for 3 seconds before playing the audio
+        setTimeout(() => {
+            const audioElement = document.getElementById('audioElement');
+            audioElement.play();
+        }, 3000);
+    </script>
+</body>
+</html>
